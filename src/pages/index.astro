@@ -1,55 +1,64 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
+
+/* 1. Crear cuenta en Resend */
+/* 2. Crear llave de Resend */
+/* 3. Crear un .env y dentro de este usar la llave de Resend (INvesitgar como AStro usa las .env) */
+/* 4. Añadir funcionalidad de enviar correo desde la pagina (Esto puede tener mas paso segun como lo hagas) */
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<header class="px-6 py-4 flex justify-between items-center bg-black ">
-		<p><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM2 14H18V4H2V14ZM5.5 13L4.1 11.6L6.675 9L4.075 6.4L5.5 5L9.5 9L5.5 13ZM10 13V11H16V13H10Z" fill="#00F5A0"/>
-</svg>
-</p>
-<h1 class="text-2xl mr-auto ml-2 text-white">LATAM.DEV</h1>
-<button class="px-6 py-1.5 bg-gray-800 text-white uppercase">Lista de Espera</button>
-
-	</header>
-<main class="bg-black px-6 py-4">
-		<section>
-		<p class="uppercase text-green-300 text-[12px] mb-6 ">Acelerador de Carrera para Desarrolladores de LATAM</p>
-<h2 class="text-white text-3xl font-bold mb-6">
-  Tu inglés es lo único que se interpone entre tú y un  
-  <span class="text-green-300">
-    trabajo remoto de $80K.
-  </span>
-</h2>
-<h3 class="text-white mb-6">Entrenamiento de inglés conversacional diseñado específicamente para desarrolladores en equipos remotos. Practica standups,
-<main>
-		<section>
-		<p class="uppercase">Acelerador de Carrera para Desarrolladores de LATAM</p>
-<h2 class="">Tu inglés es lo único que se interpone entre tú y un trabajo remoto de $80K.</h2>
-<h3 class="">Entrenamiento de inglés conversacional diseñado específicamente para desarrolladores en equipos remotos. Practica standups,
-revisiones de código y entrevistas
-técnicas — no gramática de libro de
-texto.</h3>
-
-<div class="pt-6 ">
-	<input
-  type="email"
-  placeholder="dev@empresa.latam"
-  class=" text-gray-400 w-full px-4 py-2 mb-4  bg-gray-900"
-/>
-
-	<button
-  class=" text-black w-full px-4 py-2  bg-green-300 mb-4" 
-> Sí, ¡incríbanme!</button>
-</div>
-
-	</section>
-</main>
-
-
-	<Welcome />
+  <header class="px-6 py-4 flex justify-between items-center bg-black">
+    <div class="flex items-baseline gap-x-2">
+      <svg
+        width="20"
+        height="16"
+        viewBox="0 0 20 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM2 14H18V4H2V14ZM5.5 13L4.1 11.6L6.675 9L4.075 6.4L5.5 5L9.5 9L5.5 13ZM10 13V11H16V13H10Z"
+          fill="#00F5A0"></path>
+      </svg>
+      <h1 class="text-2xl mr-auto ml-2 text-white">LATAM.DEV</h1>
+    </div>
+    <button class="px-6 py-1.5 bg-gray-800 text-white uppercase"
+      >Lista de Espera</button
+    >
+  </header>
+  <main class="bg-black px-6 py-4">
+    <!-- IMagen de fondo -->
+    <section>
+      <p class="uppercase text-green-300 text-[12px] mb-6">
+        Acelerador de Carrera para Desarrolladores de LATAM
+      </p>
+      <h2 class="text-white text-3xl font-bold mb-6">
+        Tu inglés es lo único que se interpone entre tú y un
+        <strong class="text-green-300">trabajo remoto de $80K.</strong>
+      </h2>
+      <h3 class="text-white mb-6">
+        Entrenamiento de inglés conversacional diseñado específicamente para
+        desarrolladores en equipos remotos. Practica standups, revisiones de
+        código y entrevistas técnicas — no gramática de libro de texto.
+      </h3>
+      <form id="form-subcribe" class="pt-6">
+        <input
+          type="email"
+          placeholder="dev@empresa.latam"
+          class="text-gray-400 w-full px-4 py-2 mb-4 bg-gray-900"
+        />
+        <button
+          form="form-subcribe"
+          type="submit"
+          class="text-black w-full px-4 py-2 bg-linear-to-r from-[#9EFFC8] to-[#00EC9A] mb-4"
+        >
+          Sí, ¡incríbanme!</button
+        >
+      </form>
+    </section>
+  </main>
 </Layout>
